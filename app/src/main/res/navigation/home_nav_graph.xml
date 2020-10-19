@@ -9,5 +9,14 @@
         android:id="@+id/aartiListFragment"
         android:name="god.arti.app.fragment.AartiListFragment"
         android:label="fragment_aarti_list"
-        tools:layout="@layout/fragment_aarti_list" />
+        tools:layout="@layout/fragment_aarti_list" >
+        <action
+            android:id="@+id/action_aartiListFragment_to_detailedAartiFragment"
+            app:destination="@id/detailedAartiFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailedAartiFragment"
+        android:name="god.arti.app.fragment.DetailedAartiFragment"
+        android:label="DetailedAartiFragment"
+        tools:layout="@layout/fragment_detailed_aarti"/>
 </navigation>
