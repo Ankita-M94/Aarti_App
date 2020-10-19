@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import god.arti.app.R
 import god.arti.app.databinding.FragmentAartiListBinding
 
@@ -24,7 +26,7 @@ class AartiListFragment : Fragment() {
         // Inflate the layout for this fragment
         fragmentArtiListBinding=DataBindingUtil.inflate(inflater,R.layout.fragment_aarti_list,container,false)
         initView()
-        return    fragmentArtiListBinding.root
+        return  fragmentArtiListBinding.root
     }
 
     private fun initView() {
