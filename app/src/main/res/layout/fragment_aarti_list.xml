@@ -9,15 +9,16 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".fragment.AartiListFragment">
+        tools:context=".fragment.AartiListFragment"
+        android:background="#EEEEEE">
 
         <LinearLayout
             android:id="@+id/layout_recylcerview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp">
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/countryListRecyclerView"

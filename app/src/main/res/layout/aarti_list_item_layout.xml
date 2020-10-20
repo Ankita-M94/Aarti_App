@@ -4,20 +4,22 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#f7f8f9"
-    android:padding="5dp">
+    android:background="#EEEEEE"
+    android:padding="2dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="15dp"
-        app:cardElevation="@dimen/cardview_default_radius"
+        app:cardElevation="5dp"
+        app:contentPadding="4dp"
+        app:cardBackgroundColor="#EEEEEE"
         tools:ignore="MissingConstraints">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:orientation="vertical"
+            android:background="@drawable/shape"
             tools:ignore="MissingConstraints">
 
 
@@ -25,8 +27,7 @@
                 android:id="@+id/coutry_coontainer_without_isdCode"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:id="@+id/llCountryList"
@@ -57,9 +58,9 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0.6"
                         android:layout_marginLeft="20dp"
-                        android:fontFamily="cursive"
+                        android:fontFamily="sans-serif-condensed"
                         android:text="Ganesh Aarti"
-                        android:textSize="18sp">
+                        android:textSize="22sp">
 
 
                     </TextView>
@@ -70,22 +71,15 @@
                         android:layout_height="30dp"
                         android:layout_weight="0.2"
                         android:src="@drawable/ic_atom_icon_green_tick_default"
-                        android:visibility="invisible"
-                        >
-
+                        android:visibility="invisible">
 
                     </ImageView>
 
                 </LinearLayout>
             </LinearLayout>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="5dp"
-                android:layout_marginTop="3dp"
-                android:background="#f7f8f9">
 
-            </View>
         </LinearLayout>
+
     </androidx.cardview.widget.CardView>
 
 
