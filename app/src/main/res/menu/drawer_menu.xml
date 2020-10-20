@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/aboutUsScreen"
+            android:title="About Us"
+            android:icon="@drawable/ic_atom_icon_green_tick_default"/>
+
+        <item android:id="@+id/recomendationScreen"
+            android:title="Recommendation"
+            android:icon="@drawable/ic_atom_icon_green_tick_default"/>
+
+        <item android:id="@+id/businessScreen"
+            android:title="BusinessNetworks"
+            android:icon="@drawable/ic_atom_icon_green_tick_default"/>
+
+        <item android:id="@+id/rateUsScreen"
+            android:title="Rate Us"
+            android:icon="@drawable/ic_atom_icon_green_tick_default"/>
+
+      <!--  <item android:id="@+id/aboutScreen"
+            android:title="About Us"
+            android:icon="@drawable/ic_businessman"/>
+
+        <item android:id="@+id/faqScreen"
+            android:title="FAQs"
+            android:icon="@drawable/ic_faq"
+            />
+
+        <item android:id="@+id/nav_customer_support"
+            android:title="Customer Support"
+            android:icon="@drawable/ic_support"/>
+
+        <item android:id="@+id/nav_feedback"
+            android:title="Feedback"
+            android:icon="@drawable/ic_feedback"/>
+
+        <item android:id="@+id/nav_signout"
+            android:title="Sign Out"
+            android:icon="@drawable/ic_logout"/>-->
+
+    </group>
+</menu>

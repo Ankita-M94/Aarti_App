@@ -10,7 +10,7 @@ import com.google.gson.Gson
 import god.arti.app.R
 import god.arti.app.adapter.ObjAartiList
 import god.arti.app.databinding.FragmentDetailedAartiBinding
-
+import kotlinx.android.synthetic.main.activity_home.*
 
 class DetailedAartiFragment : Fragment() {
 
@@ -38,7 +38,7 @@ class DetailedAartiFragment : Fragment() {
         if (args!=null && args.getString("selected_data") != null)
         {
              selectedItem = args.getString("selected_data")!!
-            fragmentDetailedAartiBinding.aartiName.setText(selectedItem)
+           // fragmentDetailedAartiBinding.textView.setText(selectedItem)
 
         }
 
