@@ -11,11 +11,11 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/blue"
+            android:background="@color/colorPrimary"
             android:gravity="center_horizontal"
             android:layout_gravity="center_horizontal"
             android:minHeight="?attr/actionBarSize"
-            android:theme="?attr/actionBarTheme"
+            android:theme="@style/ToolbarTheme"
             app:titleTextColor="@color/color_white" />
 
         <!-- Use DrawerLayout as root container for activity -->
@@ -49,9 +49,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="start"
+                android:background="@color/gray_shadow"
                 android:fitsSystemWindows="true"
                 app:itemBackground="@drawable/drawer_item_bg"
-                app:menu="@menu/drawer_menu" />
+                app:menu="@menu/drawer_menu"
+                android:theme="@style/NavigationTheme"/>
 
         </androidx.drawerlayout.widget.DrawerLayout>
 

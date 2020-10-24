@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/aartiListFragment"
         android:name="god.arti.app.fragment.AartiListFragment"
-        android:label="fragment_aarti_list"
+        android:label="Aarti List"
         tools:layout="@layout/fragment_aarti_list" >
         <action
             android:id="@+id/action_aartiListFragment_to_detailedAartiFragment"
@@ -17,6 +17,6 @@
     <fragment
         android:id="@+id/detailedAartiFragment"
         android:name="god.arti.app.fragment.DetailedAartiFragment"
-        android:label="DetailedAartiFragment"
+        android:label="Aarti"
         tools:layout="@layout/fragment_detailed_aarti"/>
 </navigation>

@@ -1,21 +1,26 @@
 package god.arti.app.activity
 
+import android.R.id.message
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.Toast
+import android.view.Window
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
 import god.arti.app.R
 import god.arti.app.databinding.ActivityHomeBinding
+import god.arti.app.openUrl
 import god.arti.app.toast
 import kotlinx.android.synthetic.main.activity_home.*
+
 
 class HomeActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelectedListener {
     lateinit var activityHomeBinding:ActivityHomeBinding
@@ -27,7 +32,16 @@ class HomeActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
         setSupportActionBar(toolbar)
         navController = Navigation.findNavController(this, R.id.fragment_home)
         setupDrawerLayout()
+        setStatusBarColor()
         toolbar.setTitle("The Aarti App")
+
+    }
+
+    private fun setStatusBarColor() {
+        val window: Window = this.getWindow()
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+        window.setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimary))
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -55,15 +69,24 @@ class HomeActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
        when(menuItem.itemId){
 
             R.id.aboutUsScreen ->{
-                toast("aboutUsScreen clicked")
+                openUrl(this,"http://godinc.in/")
+//                toast("aboutUsScreen clicked")
             }
 
            R.id.recomendationScreen ->{
-               toast("recomendationScreen clicked")
+               val intent = Intent(
+                   Intent.ACTION_SENDTO, Uri.fromParts(
+                       "mailto", "godinc2017@gmail.com", null
+                   )
+               )
+               intent.putExtra(Intent.EXTRA_SUBJECT, "God Inc Ads Work")
+               intent.putExtra(Intent.EXTRA_TEXT, message)
+               startActivity(Intent.createChooser(intent, "Choose an Email client :"))
            }
 
            R.id.businessScreen ->{
-               toast("businessScreen clicked")
+               openUrl(this,"http://businessnetworks.in/")
+
            }
 
            R.id.rateUsScreen ->{

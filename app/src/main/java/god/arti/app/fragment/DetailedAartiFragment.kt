@@ -38,7 +38,7 @@ class DetailedAartiFragment : Fragment() {
         if (args!=null && args.getString("selected_data") != null)
         {
              selectedItem = args.getString("selected_data")!!
-           // fragmentDetailedAartiBinding.textView.setText(selectedItem)
+            fragmentDetailedAartiBinding.tvAaratiName.setText(selectedItem)
 
         }
 

@@ -38,7 +38,7 @@ class AartiListAdapter(val listOfAarti: ArrayList<ObjAartiList>,
         var list = aartiList[position]
 
         holder.itemView.txtCountryName.setText(list.name)
-        holder.itemView.imgvCountryFlag.setImageResource(list.image)
+//        holder.itemView.imgvCountryFlag.setImageResource(list.image)
 
 
         holder.itemView.setOnClickListener{
@@ -59,7 +59,7 @@ class AartiListAdapter(val listOfAarti: ArrayList<ObjAartiList>,
             Handler().postDelayed({
                 clicked=false
                 iAartiListInterface.onItemSelected(aartiList[position])
-            }, 1000)
+            }, 500)
 
         }
 
