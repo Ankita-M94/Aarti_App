@@ -4,6 +4,7 @@ import android.R.id.message
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import android.view.Window
 import android.view.WindowManager
@@ -15,6 +16,7 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
 import com.google.android.material.navigation.NavigationView
+import com.google.android.play.core.review.ReviewManagerFactory
 import god.arti.app.R
 import god.arti.app.databinding.ActivityHomeBinding
 import god.arti.app.openUrl
@@ -26,6 +28,7 @@ class HomeActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
     lateinit var activityHomeBinding:ActivityHomeBinding
     private lateinit var navController: NavController
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         activityHomeBinding=DataBindingUtil.setContentView(this,R.layout.activity_home)
@@ -34,6 +37,8 @@ class HomeActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
         setupDrawerLayout()
         setStatusBarColor()
         toolbar.setTitle("The Aarti App")
+
+
 
     }
 
@@ -90,12 +95,54 @@ class HomeActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
            }
 
            R.id.rateUsScreen ->{
-               toast("rateUsScreen clicked")
+
+               inAppReview()
+
+              /* val manager = ReviewManagerFactory.create(this)
+               val request = manager.requestReviewFlow()
+               request.addOnCompleteListener { request ->
+                   if (request.isSuccessful) {
+                       // We got the ReviewInfo object
+                       val reviewInfo = request.result
+
+                       val flow = manager.launchReviewFlow(this, reviewInfo)
+                       flow.addOnCompleteListener { _ ->
+                           // The flow has finished. The API does not indicate whether the user
+                           // reviewed or not, or even whether the review dialog was shown. Thus, no
+                           // matter the result, we continue our app flow.
+                       }
+                   } else {
+                       // There was some problem, continue regardless of the result.
+                   }
+               }*/
+
            }
        }
-
         menuItem.setChecked(true);
         drawer_layout.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
+    fun inAppReview() {
+        val reviewManager = ReviewManagerFactory.create(this)
+        val requestReviewFlow = reviewManager.requestReviewFlow()
+        requestReviewFlow.addOnCompleteListener { request ->
+            if (request.isSuccessful) {
+                // We got the ReviewInfo object
+                val reviewInfo = request.result
+                val flow = reviewManager.launchReviewFlow(this, reviewInfo)
+                flow.addOnCompleteListener {
+                    // The flow has finished. The API does not indicate whether the user
+                    // reviewed or not, or even whether the review dialog was shown. Thus, no
+                    // matter the result, we continue our app flow.
+                }
+            } else {
+                Log.d("Error: ", request.exception.toString())
+                // There was some problem, continue regardless of the result.
+            }
+        }
+    }
+
+
 }
