@@ -47,7 +47,7 @@ class AartiListAdapter(val listOfAarti: ArrayList<ObjAartiList>,
                 return@setOnClickListener
             }
 
-            if (previousHolder!=null)
+           /* if (previousHolder!=null)
             {
                 previousHolder?.itemView?.coutry_coontainer_without_isdCode?.imgRightTick?.visibility=View.INVISIBLE
                 previousHolder=null
@@ -55,7 +55,8 @@ class AartiListAdapter(val listOfAarti: ArrayList<ObjAartiList>,
             clicked = true
 
                 holder.itemView.coutry_coontainer_without_isdCode.imgRightTick.visibility=View.VISIBLE
-
+*/
+            clicked = true
             Handler().postDelayed({
                 clicked=false
                 iAartiListInterface.onItemSelected(aartiList[position])

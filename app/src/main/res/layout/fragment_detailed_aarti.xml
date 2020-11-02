@@ -13,48 +13,39 @@
         tools:context=".fragment.DetailedAartiFragment">
 
 
-        <ImageView
-            android:id="@+id/iv_god"
-            android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:contentDescription="@string/ganesh_aarti"
-            android:scaleType="fitXY"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ganesha" />
-
-        <TextView
-            android:id="@+id/tv_aarati_name"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/roboto_black_italic"
-            android:gravity="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/iv_god"
-            tools:text="@string/ganesh" />
-
         <androidx.core.widget.NestedScrollView
             android:id="@+id/nestedScrollView"
-            android:layout_width="409dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_marginBottom="1dp"
             android:fillViewport="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_aarati_name">
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+                <ImageView
+                    android:id="@+id/iv_god"
+                    android:layout_width="wrap_content"
+                    android:layout_height="250dp"
+                    android:contentDescription="@string/ganesh_aarti"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/ganesha" />
 
+                <TextView
+                    android:id="@+id/tv_aarati_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/roboto_black_italic"
+                    android:gravity="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textSize="24sp"
+                    tools:text="@string/ganesh" />
                 <TextView
                     android:id="@+id/tv_aarati_detail"
                     android:layout_width="330dp"
@@ -64,6 +55,7 @@
                     android:gravity="center"
                     android:letterSpacing="0.1"
                     android:lineHeight="30dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/ganesh_aarti"
                     android:textSize="18sp" />
             </LinearLayout>

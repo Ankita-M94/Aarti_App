@@ -51,7 +51,6 @@
                 android:layout_gravity="start"
                 android:background="@color/gray_shadow"
                 android:fitsSystemWindows="true"
-                app:itemBackground="@drawable/drawer_item_bg"
                 app:menu="@menu/drawer_menu"
                 android:theme="@style/NavigationTheme"/>
 

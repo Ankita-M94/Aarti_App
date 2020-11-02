@@ -69,6 +69,8 @@ class HomeActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
         }
     }
 
+
+
     override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
 
        when(menuItem.itemId){
@@ -117,6 +119,8 @@ class HomeActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
                }*/
 
            }
+
+
        }
         menuItem.setChecked(true);
         drawer_layout.closeDrawer(GravityCompat.START);
