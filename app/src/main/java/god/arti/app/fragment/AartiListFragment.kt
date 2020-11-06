@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
@@ -40,6 +42,8 @@ class AartiListFragment : Fragment(), IAartiListInterface {
         fragmentArtiListBinding=DataBindingUtil.inflate(inflater,R.layout.fragment_aarti_list,container,false)
         initView()
         return  fragmentArtiListBinding.root
+
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -57,6 +61,8 @@ class AartiListFragment : Fragment(), IAartiListInterface {
         mInterstitialAd = InterstitialAd(context)
         mInterstitialAd.adUnitId =getString(R.string.test_interstrisialID)
         mInterstitialAd.loadAd(AdRequest.Builder().build())
+
+
 
     }
 
@@ -103,6 +109,22 @@ class AartiListFragment : Fragment(), IAartiListInterface {
         }
 
         setDataToAdapter()
+
+        activity?.onBackPressedDispatcher?.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                if (mInterstitialAd.isLoaded) {
+                    mInterstitialAd.show()
+                }
+
+                mInterstitialAd.adListener = object: AdListener() {
+
+                    override fun onAdClosed() {
+                        // Code to be executed when the interstitial ad is closed.
+                       activity!!.finish()
+                    }
+                }
+
+            }})
     }
 
     private fun setDataToAdapter()
@@ -115,26 +137,32 @@ class AartiListFragment : Fragment(), IAartiListInterface {
 
     override fun onItemSelected(objAartiList: ObjAartiList) {
 
-        if (mInterstitialAd.isLoaded) {
+       /* if (mInterstitialAd.isLoaded) {
             mInterstitialAd.show()
-        } else {
+        } else {*/
             findNavController().navigate(R.id.action_aartiListFragment_to_detailedAartiFragment,
                 bundleOf("selected_data" to objAartiList.name))
-        }
+       // }
 
-        mInterstitialAd.adListener = object: AdListener() {
+       /* mInterstitialAd.adListener = object: AdListener() {
 
             override fun onAdClosed() {
                 // Code to be executed when the interstitial ad is closed.
                 findNavController().navigate(R.id.action_aartiListFragment_to_detailedAartiFragment,
                     bundleOf("selected_data" to objAartiList.name))
             }
-        }
+        }*/
 
 
 
     }
+
+
+
+
     override fun onBackButtonClick() {
     }
+
+
 
 }

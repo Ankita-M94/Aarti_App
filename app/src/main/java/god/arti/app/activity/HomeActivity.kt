@@ -15,10 +15,14 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
+import com.google.android.gms.ads.AdListener
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.InterstitialAd
 import com.google.android.material.navigation.NavigationView
 import com.google.android.play.core.review.ReviewManagerFactory
 import god.arti.app.R
 import god.arti.app.databinding.ActivityHomeBinding
+import god.arti.app.fragment.AartiListFragment
 import god.arti.app.openUrl
 import god.arti.app.toast
 import kotlinx.android.synthetic.main.activity_home.*
@@ -29,6 +33,7 @@ class HomeActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
     private lateinit var navController: NavController
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         activityHomeBinding=DataBindingUtil.setContentView(this,R.layout.activity_home)
@@ -37,8 +42,6 @@ class HomeActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
         setupDrawerLayout()
         setStatusBarColor()
         toolbar.setTitle("The Aarti App")
-
-
 
     }
 
@@ -64,7 +67,7 @@ class HomeActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
     override fun onBackPressed() {
         if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
             drawer_layout.closeDrawer(GravityCompat.START)
-        } else {
+        }else{
             super.onBackPressed()
         }
     }
@@ -119,8 +122,6 @@ class HomeActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
                }*/
 
            }
-
-
        }
         menuItem.setChecked(true);
         drawer_layout.closeDrawer(GravityCompat.START);

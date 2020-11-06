@@ -10,13 +10,17 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#EAEAEA"
+        android:background="#EAEAEA">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         tools:context=".fragment.AartiListFragment">
 
         <LinearLayout
             android:id="@+id/layout_recylcerview"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
@@ -25,9 +29,13 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/countryListRecyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingBottom="50dp"
+                android:clipToPadding="false"
+                ads:spanCount="4"
                 android:fadeScrollbars="false" />
         </LinearLayout>
+    </RelativeLayout>
 
         <com.google.android.gms.ads.AdView
             android:id="@+id/adView"
@@ -38,9 +46,6 @@
             android:layout_alignParentBottom="true"
             ads:adUnitId="@string/test_banner_id"
             tools:layout_editor_absoluteX="16dp" />
-
-
-
-
     </RelativeLayout>
+
 </layout>

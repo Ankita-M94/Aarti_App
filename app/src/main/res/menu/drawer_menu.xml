@@ -5,19 +5,19 @@
         android:checkableBehavior="single">
         <item android:id="@+id/aboutUsScreen"
             android:title="About Us"
-            android:icon="@drawable/ic_atom_icon_green_tick_default"/>
+            android:icon="@drawable/about_us"/>
 
         <item android:id="@+id/recomendationScreen"
             android:title="Recommendation"
-            android:icon="@drawable/ic_atom_icon_green_tick_default"/>
+            android:icon="@drawable/recom"/>
 
         <item android:id="@+id/businessScreen"
             android:title="BusinessNetworks"
-            android:icon="@drawable/ic_atom_icon_green_tick_default"/>
+            android:icon="@drawable/networks"/>
 
         <item android:id="@+id/rateUsScreen"
             android:title="Rate Us"
-            android:icon="@drawable/ic_atom_icon_green_tick_default"/>
+            android:icon="@drawable/star"/>
 
       <!--  <item android:id="@+id/aboutScreen"
             android:title="About Us"
